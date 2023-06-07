@@ -1,12 +1,12 @@
 import express from "express";
 
 const app = express();
+import path from "path"
 
 app.get("/getproducts",(req,res)=>{
-  res.json({
-    success: true,
-    product: []
-  });
+  const pathlocation = path.resolve();
+
+  res.sendFile(path.join(pathlocation,"index.html"))
 });
 
 app.listen(5000,()=>{
